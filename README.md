@@ -24,21 +24,27 @@ pip install aliyun-python-sdk-core-v3
 
 
 主域名 如：baidu.com
+
 dns_domain = ''
 
 阿里云的Access Key ID
+
 access_key_id = ''
 
 阿里云的Access Key Secret
+
 access_Key_secret = ''
 
 DNS 或者一级域名二级域名前缀  譬如 3q.baidu.com  这里填入3q
+
 DNS_RR = ''
 
 记录类型:A或者CNAME,默认为A
+
 dns_type = 'A'
 
 记录值：需要修改的ip
+
 dns_value = ip
 
 
