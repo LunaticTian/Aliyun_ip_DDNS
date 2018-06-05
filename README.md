@@ -1,6 +1,19 @@
 # aliyun_ip_DDNS
 基于阿里云SDK
 
+
+## update 
+
+2018/6/5：
+新增Email.py以及python_ip.bat/Eamil主要作用用于某些突发状况，用以Email做备用IP处理
+
+1.优化网络检测
+
+2.去除ip = socket.gethostbyname(socket.gethostname())，用于http://myip.dnsomatic.com/获取外网IP。
+
+// 某些情况下 socket.gethostbyname(socket.gethostname())获取到的是本地IP或者路由器分配IP。
+
+
 ## 使用范围
 github上大多数以python2.7为主，此程序为python3。
 
@@ -22,7 +35,7 @@ pip install aliyun-python-sdk-core-v3
 
 ## 参数说明
 
-
+### aliDNS
 主域名 如：baidu.com
 
 dns_domain = ''
@@ -47,6 +60,41 @@ dns_type = 'A'
 
 dns_value = ip
 
+### Eamli
+
+ip = getip()
+            
+print('get ip :' + ip )
+            
+msg = MIMEText('IP:'+str(ip), 'plain', 'utf-8')
+            
+aliyundns.update_dns()
+            
+msg['Subject'] = Header("IP地址发送", 'utf-8')
+            
+            
+发送的邮箱地址
+            
+msg['from'] = '123123@126.com'
+            
+接收的邮箱地址
+            
+msg['to'] = 'imqq@qq.com'
+            
+smtp = smtplib.SMTP()
+            
+smtp服务器
+            
+smtp.connect("smtp.126.com") 
+            
+登陆发送账号，密码
+            
+smtp.login("123123@126.com", "123123")
+            
+编辑邮件  发送地址/接收地址/内容
+            
+smtp.sendmail("123123@126.com", "imqq@qq.com", msg.as_string())
+		         
 
 ## 函数说明
 
