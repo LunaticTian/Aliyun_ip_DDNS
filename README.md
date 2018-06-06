@@ -13,6 +13,9 @@
 
 // 某些情况下 socket.gethostbyname(socket.gethostname())获取到的是本地IP或者路由器分配IP。
 
+2018/6/6:
+
+1.新增aliyunDNS_library，内含此项目的全部依赖。
 
 ## 使用范围
 github上大多数以python2.7为主，此程序为python3。
@@ -27,9 +30,11 @@ socket
 
 json
 
-阿里云SDK
+阿里云SDK：
 
-pip install aliyun-python-sdk-core-v3
+为防止pip install 错误，aliyunDNS_library.rar内含此项目的所有依赖。
+
+将该文件解压，放置pyhton内的site-packages中。
 
 
 
