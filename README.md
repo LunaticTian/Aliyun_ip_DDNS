@@ -150,6 +150,7 @@ smtp.sendmail("123123@126.com", "imqq@qq.com", msg.as_string())
 
 
 ## 使用说明
+将依赖包解压复制到 安装目录下的Lib文件中，例如 `C:\Users\Raphael\AppData\Local\Programs\Python\Python37-32\Lib`.
 
 程序可设定定时启用或开机启用，使用者应保证依赖正确并且是pyhton3以上。
 
